@@ -1,0 +1,154 @@
+/*Navbar Header Custom CSS*/
+
+.navbar-inverse {
+  background-color: rgb(82,92,163); /*Sanofi Corporate Graphic Standards*/
+  border-color: rgb(82,92,163); /*Sanofi Corporate Graphic Standards*/
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+  color: #fff;
+  background-color: rgb(62,69,122); /*Sanofi Corporate Graphic Standards*/
+  text-decoration: none;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav>li>a {
+  color: #fff;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+  text-decoration: underline;
+}
+
+.navbar-collapse {
+  font-size: 17px;
+}
+
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    float: none;
+ }
+
+ .sanofi-tabPanel-right {
+   float: right !important;
+   display: inline-flex !important;
+ }
+
+}
+
+/*Container*/
+
+.container-fluid {
+  max-width: 1920px;
+}
+
+/*Custom Sanofi header/footer*/
+
+#sanofi-header {
+    /*default navbar min-height = 50px*/
+    height: 60px;
+    background-color: white;
+}
+
+#sanofi-header-left {
+  float: left;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#sanofi-header-title {
+  font-size: 24px;
+  display: none;
+}
+
+#sanofi-header-title-alt {
+  font-size: 24px;
+  display: inline;
+}
+
+#sanofi-header-left-logo {
+  display: inline;
+  padding-left: 15px;
+  padding-right: 20px;
+}
+
+#sanofi-header-left-logo  > img {
+  height: 40px;
+}
+
+#sanofi-header-right {
+  display: none;
+  float: right;
+  height: 60px;
+  padding-top: 10px;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#sanofi-header-right-logo{
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 50px;
+  margin-top: -70px;
+}
+
+#sanofi-header-logo-bp {
+  height: 175px;
+  margin-right: -20px;
+}
+
+#sanofi-header-logo-art {
+  height: 100px;
+}
+
+@media (min-width: 768px) {
+ #sanofi-header-right,
+ #sanofi-header-title{
+    display: inline;
+ }
+
+ #sanofi-header-title-alt {
+    display: none;
+ }
+}
+
+/*Sanofi accordion*/
+.sanofi-accordion {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.sanofi-accordion-button {
+  background-color: white;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 24px;
+  padding-left: 0px;
+}
+
+.sanofi-accordion-button:after {
+  content: "\2212";
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.sanofi-accordion-collapse:after {
+  content: '\002B';
+}
+
+.sanofi-accordion-panel {
+  padding-left: 15px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.sanofi-accordion-panel-collapse {
+  max-height: 0;
+}

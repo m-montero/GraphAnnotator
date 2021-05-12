@@ -1,0 +1,17 @@
+/*fixed-top*/
+
+body {
+  padding-top: 130px; /*sanofi(60) + navbar(50+20) = 130*/
+}
+
+#sanofi-header{
+  position: fixed;
+  top: 0px;
+  z-index: 1030;
+  background-color: #FFFFFF;
+  width: 100%;
+}
+
+.navbar-fixed-top {
+  top: 60px;
+}
