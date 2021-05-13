@@ -1,0 +1,9 @@
+## Publish
+
+Depending on your usage, simply **save the graph** and/or **download the R code**. 
+
+For the graph, "right-click" on the image and select from the menu such as "Save image as...".
+
+For the R code, the content includes the library call, loading the base ggplot2 object via  `readRDS`, and finally, appending the annotation code to the `ggplot2` object. 
+
+<span class="help-block">Note, for the R code, it is assumed that the .Rds file is available in the working directory --- if this is not the case, update accordingly. </span>

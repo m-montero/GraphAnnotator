@@ -46,7 +46,7 @@ sanofiNavbarPage <- function(title, ..., id = NULL, altTitle = title, navTitle =
     tags$div(id = 'sanofi-header',
              tags$div(id = 'sanofi-header-left',
                       tags$div(id = 'sanofi-header-left-logo',
-                               tags$img(src = 'resources/hexStickers_annotateLogoPencil.png')),
+                               tags$img(src = 'resources/annotateLogoPencilHex.svg')),
                       tags$div(id = 'sanofi-header-title',
                                title),
                       tags$div(id = 'sanofi-header-title-alt',

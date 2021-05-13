@@ -64,15 +64,16 @@ annotateLayerUI <- function(id) {
   ns <- NS(id)
   # return UI
   tagList(
-    # uiOutput(ns("geom_type")),
     fluidRow(
-      default_annotate_layer_widgets$selectInput(inputId = ns("geom_type"), label = "Select Annotation type", choices = c(names(annotate_layer_args))) ),
+      column(width = 12, default_annotate_layer_widgets$selectInput(inputId = ns("geom_type"), label = "Select Annotation type", choices = c(names(annotate_layer_args))) )),
     fluidRow(
-      column(width = 3, style = 'padding: 0px;', tags$b("Read mouse")),
+      column(width = 3, tags$b("Read mouse")),
       column(width = 6, offset = -1, style = 'padding-left: 5px; padding-right: 5px;',
              shiny::radioButtons(inputId = ns("read_mouse"), label = NULL, choices = list('Off' = FALSE, 'On' = TRUE), selected = FALSE) )),
-    fluidRow(uiOutput(ns("multiple_args"))), # multiple select drop down
-    fluidRow(uiOutput(ns("widget")))
+    fluidRow(
+      column(width = 12, uiOutput(ns("multiple_args")))), # multiple select drop down
+    fluidRow(
+      column(width = 12, uiOutput(ns("widget"))))
   )
 }
 
@@ -254,10 +255,7 @@ annotateLayerServer <- function(id, plotHover = list(), plotClick = list(), plot
       ############################################################################################
       ### geom text, hline, vline section - module server logic
       ############################################################################################
-      # plotHover
-      # plotCapture()
       ## Read mouse and update x and y inputs
-      ## currently hard coded for `text` annotation - need to dynamic - x and y positions
       observeEvent(input$read_mouse,{
         if(input$geom_type != "rect"){
 
@@ -371,7 +369,6 @@ annotateLayerServer <- function(id, plotHover = list(), plotClick = list(), plot
 
       # updating the input widgets
       observeEvent(mrv$x_dynamic, ignoreNULL = FALSE,{
-        # isolate({str(reactiveValuesToList(mrv))})
         if(input$read_mouse){
           if(input$geom_type == "text"){
             updateNumericInput(inputId = ('x'), value = mrv$x_dynamic)
@@ -438,7 +435,6 @@ annotateLayerServer <- function(id, plotHover = list(), plotClick = list(), plot
                 mrv$dbl_x_click <- NULL
                 mrv$dbl_y_click <- NULL
               }
-              # updateRadioButtons(inputId = 'read_mouse', selected = FALSE)
             }
           }
         }
@@ -498,9 +494,6 @@ annotateLayerServer <- function(id, plotHover = list(), plotClick = list(), plot
             # capture user input
             ans[[arg_i]] <- input[[arg_i]]
 
-            # if(arg_i == "label"){
-            #   ans[[arg_i]] <- paste0("'",input[[arg_i]],"'")
-            # }
           }
         }
 
@@ -510,16 +503,6 @@ annotateLayerServer <- function(id, plotHover = list(), plotClick = list(), plot
         } else if(input$geom_type == 'vline'){
           ans[['x']] <- ans[['xintercept']]
         }
-
-        # if(input$geom_type == "text"){
-        #   ans[["parse"]] <- TRUE
-        # }
-
-        ## plot mouse events passed to module - used for debugging
-        # ans[["plotHover"]] <- plotHover()
-        # ans[["plotClick"]] <- plotClick()
-        # ans[["plotDblClick"]] <- plotDblClick()
-        # ans[["plotBrush"]] <- plotBrush()
 
         # return
         ans

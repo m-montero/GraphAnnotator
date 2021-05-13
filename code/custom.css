@@ -8,3 +8,11 @@
   color: #ffffff;
 }
 */
+
+#upload_rds_example {
+  max-width: 500px;
+}
+
+.ace_print-margin {
+  display: none;
+}

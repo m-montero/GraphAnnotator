@@ -3,34 +3,24 @@
 # project template
 library(shiny)
 library(ggplot2)
-library(shinyAce)
 # library(yaml)
 # library(jsonlite)
 
-
-## Project Specific - from moudle
-# library(Cairo)   # For nicer ggplot2 output when deployed on Linux
+## Project Specific - from module
+library(Cairo)   # For nicer ggplot2 output when deployed on Linux
 # library(dplyr)
-# library(grDevices)
+library(grDevices)
 
 #project specific
-# library(dplyr)
 library(colourpicker)
-# library(svglite)
-# library(gdtools)
-# library(shinyAce)
+library(shinyAce)
 # library(datasets)
 
-# library(purrr)
-# library(shinyWidgets)
-# library(data.table)
-# library(rio)
+# save ggplot images svg
+library(svglite)
+library(gdtools)
+library(systemfonts)
 
-
-# project specific
-if(dir.exists("code")) addResourcePath(prefix = "code", directoryPath = "code")
-if(dir.exists("data")) addResourcePath(prefix = "data", directoryPath = "data")
-if(dir.exists("components")) addResourcePath(prefix = "components", directoryPath = "components")
 
 # common Sanofi Shiny template
 if(dir.exists("resources")) source("resources/shiny.R")
