@@ -16,3 +16,10 @@
 .ace_print-margin {
   display: none;
 }
+
+#plot_tab2 {
+  position: fixed;
+  max-width: 62vw; /* Fallback for browsers that do not support Custom Properties */
+  max-width: calc(var(--vw, 1vw) * 62);
+}
+

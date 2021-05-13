@@ -230,8 +230,6 @@ function(input, output, session) {
       # if (rv$counter$no_of_layers > 0) {
       if (rv$counter$no_of_layers >= 0) {
 
-        # rv$annotateLayers
-
         annotateLayers <- lapply(rv$capture, function(ele_i) {
           if (isFALSE(is.null(ele_i))) {
             if (length(ele_i) > 2) {
@@ -239,7 +237,6 @@ function(input, output, session) {
             }
           }
         })
-
 
         rv$codeRaw <- lapply(rv$capture, function(ele_i) {
           if (isFALSE(is.null(ele_i))) {
@@ -281,11 +278,7 @@ function(input, output, session) {
   # Tab 3 - Publish ----
   #################################################################################################################
 
-  ## show ggplot2::last_plot under Tab 3 Publish section - Save Plot as Image
-
-  ## Update size of render plot inside modal dialog download
-  # observeEvent(input$plot_graph_preview_update, {
-
+  ## show stable ggplot2::last_plot(ggPublish) under Tab 3 Publish section
   output$plot_modal_dialog_box <- renderPlot({
     rv$ggPublish
   })
@@ -318,7 +311,6 @@ function(input, output, session) {
 
   ## Code View tab under Tab 3 Publish section - Code
   # observeEvent(rv$code,{
-  # observeEvent(input$tabs_top_header,{
   observeEvent(input$tab3_Publish_id,{
 
     if(input$tabs_top_header == "tab3_Publish"){
@@ -328,8 +320,6 @@ function(input, output, session) {
 
           shiny::showNotification("Rendering Code...", id = "renderCodeNotification",
                                   duration = 2, type = "message", closeButton = TRUE)
-
-          # on.exit(expr = removeNotification(id = "renderCodeNotification"))
 
           aceEditor(outputId = paste0("gg_plot_code_modal"),
                     height = "500px",

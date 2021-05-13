@@ -4,6 +4,13 @@ One of the key ideas behind `ggplot2` is to build complex graphs --- one layer a
 
 Use the `+ Add Layer` and `- Remove Layer` buttons below to interactively **add and customize** annotations layers and **remove** them, respectively. 
 
-For a given annotation layer, you can start annotating your graph by selecting an annotation type. Based on the select type, configure your annotation using the populated widgets. To simplify annotation placement, enable the “Read mouse” and begin hovering the graph. “Click” once you have moved your annotation to the desired location.
+For a given annotation layer, you can start annotating your graph by selecting an annotation type and configure using the dynamically populated widgets. 
+
+To simplify annotation placement, enable the "Read mouse" and begin hovering the graph. "Click" your mouse to set the annotation position and disable "Read mouse". Note, for annotation types `text`,`hline` & `vline`,  **click once**, and for `rect`,  **click twice**.
+
+Notes for `text` annotations:
+
+- For multiple lines, use the escape character `\n` **and** add quotes to your input (e.g. `"line one\nline2"`)
+- For formulas (e.g. `italic(R) ^ 2 == 0.75`), enable the `parse` configuration by setting to `TRUE` and input a <a href="https://stat.ethz.ch/R-manual/R-devel/library/grDevices/html/plotmath.html" target="_blank">mathematical expression</a>
 
 Once satisfied, navigate to the third step --- **Publish**
